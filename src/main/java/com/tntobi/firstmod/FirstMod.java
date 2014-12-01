@@ -1,5 +1,7 @@
 package com.tntobi.firstmod;
 
+import com.tntobi.firstmod.init.ModBlock;
+import com.tntobi.firstmod.init.ModItem;
 import com.tntobi.firstmod.reference.Reference;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -12,16 +14,16 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
  */
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 
-public class FirstMod {
+public class FirstMod
+{
     @Mod.Instance(Reference.MOD_ID)
     public static FirstMod instance;
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
-
+    public void preInit(FMLPreInitializationEvent event) {
+        ModBlock.init();
+        ModItem.init();
     }
-
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
